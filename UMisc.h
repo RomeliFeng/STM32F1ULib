@@ -86,4 +86,6 @@ struct UIT_Typedef {
 	uint8_t SubPriority;
 };
 
+typedef void (*voidFun)(void);
+
 #endif /* UMISC_H_ */
