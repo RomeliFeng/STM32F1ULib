@@ -15,10 +15,10 @@ class UTick {
 public:
 	static void Init(uint16_t us);
 	static void uWait(uint64_t us);
-	static inline void mWait(uint32_t ms) {
+	static inline void mWait(uint64_t ms) {
 		uWait(ms * 1000);
 	}
-	static inline void Wait(uint32_t s) {
+	static inline void Wait(uint64_t s) {
 		mWait(s * 1000);
 	}
 	static uint64_t Millis();

@@ -48,7 +48,7 @@ void UTick::uWait(uint64_t us) {
  * return uint64_t
  */
 uint64_t UTick::Millis() {
-	return _Now / 1000;
+	return Micros() / 1000;
 }
 
 /*
@@ -57,7 +57,13 @@ uint64_t UTick::Millis() {
  * return uint64_t
  */
 uint64_t UTick::Micros() {
-	return _Now;
+	if (_InitFlag) {
+		return _Now;
+	} else {
+		//Error @Romeli 系统滴答没有初始化
+		UDebugOut("System tick has no be inited");
+	}
+	return 0;
 }
 
 /*
